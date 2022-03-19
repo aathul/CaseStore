@@ -1,0 +1,26 @@
+var mongoose = require("mongoose");
+
+var registerSchema = mongoose.Schema({
+  userName: {
+    type: String,
+    require: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+});
+module.exports = mongoose.model("Register", registerSchema);
